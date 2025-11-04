@@ -1,0 +1,298 @@
+/*
+    ESTILIZAÇÃO MOBILE FIRST
+    Prioriza telas pequenas (até 600px) e depois adapta para desktop.
+*/
+
+:root {
+    /* Cores */
+    --cor-principal: #FF4081; /* Rosa vibrante */
+    --cor-secundaria: #3F51B5; /* Azul Escuro */
+    --cor-fundo: #F8F8F8;
+    --cor-texto: #333;
+    --cor-alerta: #FF9800; /* Laranja */
+    --cor-perigo: #F44336; /* Vermelho */
+}
+
+/* Base e Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    /* Adiciona padding no rodapé para a barra de navegação fixa */
+    padding-bottom: 60px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+    cursor: pointer; /* Indica que é clicável */
+}
+
+/* Cabeçalho */
+.app-header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* Dashboard e Container Principal */
+.dashboard-container {
+    padding: 15px;
+    max-width: 900px; /* Limite para telas grandes */
+    margin: 0 auto;
+}
+
+/* Cards do Dashboard (Módulos de acesso rápido) */
+.card-modulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    min-height: 120px;
+    color: white;
+}
+
+.card-modulo:active {
+    transform: scale(0.98);
+}
+
+.card-modulo i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.card-modulo h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.card-modulo p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Estilos de Cor para os Módulos */
+.m1 { background-color: #EF5350; } /* Vermelho Suave - Ciclo */
+.m2 { background-color: #66BB6A; } /* Verde - Bem-Estar */
+.m3 { background-color: #42A5F5; } /* Azul Claro - Cuidados */
+.m4 { background-color: #AB47BC; } /* Roxo - Sexualidade */
+.m5 { background-color: #FF7043; } /* Laranja Forte - Ajuda (Destaque) */
+
+
+/* Seção de Detalhe dos Módulos */
+.modulo-detail {
+    /* display: none; ESTA CLASSE É CONTROLADA VIA JAVASCRIPT */
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    /* Adiciona transição para suavizar a abertura (opcional) */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.modulo-detail h3 {
+    font-size: 1.5rem;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.card-content-large {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os cards internos */
+}
+
+/* Cards Internos */
+.card-content {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-content h4 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+.card-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card-content li {
+    margin-bottom: 8px;
+}
+
+.card-content i {
+    color: var(--cor-principal);
+    margin-right: 5px;
+}
+
+/* Estilo para Fases do Ciclo */
+.card-fase {
+    background-color: #E3F2FD; /* Fundo azul claro */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #2196F3;
+}
+
+.card-fase h5 {
+    color: #1976D2;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Card de Alerta */
+.card-alerta {
+    background-color: #FFCDD2; /* Fundo vermelho claro */
+    border-left: 5px solid var(--cor-perigo);
+    padding: 15px;
+    border-radius: 8px;
+}
+.card-alerta h5 {
+    color: var(--cor-perigo);
+    margin-bottom: 10px;
+}
+
+/* Card de Alerta Sexualidade */
+.card-alerta-sex {
+    background-color: #F3E5F5; /* Fundo roxo claro */
+    border-left: 5px solid #9C27B0;
+}
+.card-alerta-sex p strong {
+    color: #9C27B0;
+}
+
+/* Card de EcoAbsorvente */
+.card-eco {
+    border: 1px dashed #4CAF50;
+}
+
+/* Módulo Ajuda */
+.contact-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item h5 {
+    color: var(--cor-principal);
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+
+
+/* BARRA DE NAVEGAÇÃO INFERIOR FIXA (Mobile First) */
+.mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.nav-item:hover, .nav-item:focus {
+    color: var(--cor-principal);
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+/* Media Query para Desktop (acima de 600px) */
+@media (min-width: 600px) {
+    /* Esconder a barra de navegação inferior */
+    body {
+        padding-bottom: 0;
+    }
+    .mobile-nav {
+        display: none;
+    }
+
+    /* Layout do Dashboard em Grid para Desktop */
+    .dashboard-container {
+        padding: 30px;
+    }
+    
+    /* Os cards de módulo funcionam como cabeçalhos grandes no desktop */
+    .card-modulo {
+        pointer-events: all; /* Permite clique */
+        box-shadow: none;
+        border-bottom: 2px solid var(--cor-principal);
+        border-radius: 0;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        color: var(--cor-texto);
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: transparent !important;
+        /* Adiciona margem inferior para separar do conteúdo aberto */
+        margin-bottom: 5px; 
+    }
+    .card-modulo i {
+        font-size: 1.5rem;
+        margin-right: 10px;
+        color: var(--cor-principal);
+    }
+    .card-modulo h2 {
+        font-size: 1.5rem;
+    }
+    .card-modulo p {
+        display: none; /* Esconde a descrição curta no desktop */
+    }
+
+    .modulo-detail {
+        margin-top: 0;
+        border-top: none;
+        /* Alinha o conteúdo detalhado abaixo do card que funciona como título */
+        padding-top: 10px;
+    }
+}
+
+/* Scroll suave para links internos (simula a experiência de app) */
+html {
+  scroll-behavior: smooth;
+}

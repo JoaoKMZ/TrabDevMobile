@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo Guia | Primeira Menstruação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const allModules = document.querySelectorAll('.modulo-detail');
+            
+            allModules.forEach(module => {
+                if (module.id !== id) {
+                    module.classList.remove('active');
+                    module.style.display = 'none';
+                }
+            });
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            } else {
+                content.classList.add('active');
+                content.style.display = 'block';
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.modulo-detail').forEach(module => {
+                module.style.display = 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Ciclo Guia</h1>
+        <p>Tudo o que você precisa saber sobre sua primeira menstruação, sem mistério!</p>
+    </header>
+
+    <main class="dashboard-container">
+        <a onclick="toggleContent('modulo-1')" class="card-modulo m1">
+            <i class="fas fa-hand-holding-water"></i>
+            <h2>O Ciclo Sem Mistério</h2>
+            <p>Fases, duração e o que é normal.</p>
+        </a>
+
+        <a onclick="toggleContent('modulo-2')" class="card-modulo m2">
+            <i class="fas fa-dumbbell"></i>
+            <h2>Bem-Estar e Emoções</h2>
+            <p>Cólicas, TPM e dicas de nutrição.</p>
+        </a>
+
+        <a onclick="toggleContent('modulo-3')" class="card-modulo m3">
+            <i class="fas fa-toilet-paper"></i>
+            <h2>Cuidados Práticos</h2>
+            <p>Higiene, troca e descarte.</p>
+        </a>
+
+        <a onclick="toggleContent('modulo-4')" class="card-modulo m4">
+            <i class="fas fa-heart"></i>
+            <h2>Sexualidade e Prevenção</h2>
+            <p>Contracepção e ISTs.</p>
+        </a>
+
+        <a onclick="toggleContent('modulo-5')" class="card-modulo m5">
+            <i class="fas fa-ambulance"></i>
+            <h2>Onde Buscar Ajuda</h2>
+            <p>Seu ponto de apoio na escola e na saúde.</p>
+        </a>
+
+        <section id="modulo-1" class="modulo-detail">
+            <div class="card-content-large">
+                <h3><i class="fas fa-hand-holding-water"></i> O Ciclo Sem Mistério</h3>
+                <div class="card-content">
+                    <h4>O que é o Ciclo?</h4>
+                    <p>O ciclo menstrual começa no primeiro dia da sua menstruação e vai até o dia anterior à próxima. Seu corpo se prepara para uma possível gravidez a cada mês. Se ela não acontece, ele 'limpa a casa' e o sangramento vem. <strong>Duração Normal: 21 a 35 dias.</strong></p>
+                </div>
+                
+                <div class="card-fase">
+                    <h5><i class="fas fa-tint"></i> Fase 1: Menstruação</h5>
+                    <p>É a descamação da camada interna do seu útero (endométrio). Dica: Não é sangue 'sujo'! É apenas um tecido que seu corpo não precisava mais. A duração costuma ser de 3 a 7 dias.</p>
+                </div>
+                <div class="card-fase">
+                    <h5><i class="fas fa-sun"></i> Fase 2: Folicular (Pré-Ovulação)</h5>
+                    <p>Seu corpo está produzindo estrogênio e preparando um óvulo. Muitas vezes você se sente com mais energia, disposta e com mais foco.</p>
+                </div>
+                <div class="card-fase">
+                    <h5><i class="fas fa-seedling"></i> Fase 3: Ovulação</h5>
+                    <p>O óvulo é liberado. É o "ápice" do seu ciclo, e você pode notar um muco vaginal mais transparente e elástico neste período.</p>
+                </div>
+                <div class="card-fase">
+                    <h5><i class="fas fa-cloud"></i> Fase 4: Lútea (Pré-Menstrual)</h5>
+                    <p>O hormônio progesterona domina aqui. É normal sentir mais sono, inchaço e algumas mudanças de humor (TPM). Seu corpo está guardando energia.</p>
+                </div>
+
+                <div class="card-alerta">
+                    <h5>🚨 Sinais de Alerta (Quando procurar o Enfermeiro?)</h5>
+                    <ul>
+                        <li><strong>Fluxo Muito Forte:</strong> Precisa trocar absorvente de hora em hora por mais de 4 horas seguidas.</li>
+                        <li><strong>Dor Incapacitante:</strong> Cólica que não passa com remédio ou te impede de ir à aula/trabalho, ou que te faz vomitar.</li>
+                        <li><strong>Ciclos Extremos:</strong> Ciclo com menos de 21 dias ou mais de 35 dias, de forma persistente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo-2" class="modulo-detail">
+            <div class="card-content-large">
+                <h3><i class="fas fa-dumbbell"></i> Bem-Estar e Emoções</h3>
+                
+                <div class="card-content">
+                    <h4>Cólicas: O Que Alivia?</h4>
+                    <ul>
+                        <li><i class="fas fa-fire"></i> <strong>Calor:</strong> Use bolsa de água quente na barriga/costas. Ajuda a relaxar os músculos do útero.</li>
+                        <li><i class="fas fa-pills"></i> <strong>Remédio:</strong> Tome o analgésico no início do incômodo (não espere a dor ficar insuportável). Converse com o enfermeiro sobre qual é o mais indicado.</li>
+                        <li><i class="fas fa-person-walking"></i> <strong>Movimento:</strong> Alongamentos suaves e caminhadas leves podem ajudar a relaxar.</li>
+                    </ul>
+                </div>
+
+                <div class="card-content">
+                    <h4>TPM vs. TDPM</h4>
+                    <p>É normal sentir-se diferente (irritada, cansada) antes da menstruação. Se as emoções ou a ansiedade forem tão fortes que atrapalham seus estudos ou sua vida social, chame isso de TDPM. Nesses casos, <strong>converse com o enfermeiro ou um psicólogo.</strong></p>
+                </div>
+
+                <div class="card-content">
+                    <h4>Nutrição e Seu Humor</h4>
+                    <ul>
+                        <li><i class="fas fa-glass-water"></i> <strong>Beba Água:</strong> Ajuda a reduzir o inchaço e a retenção de líquido da fase pré-menstrual.</li>
+                        <li><i class="fas fa-bowl-food"></i> <strong>Coma Ferro:</strong> Durante o fluxo, alimentos ricos em ferro (carne, legumes escuros) ajudam a repor o que foi perdido e evitam a fraqueza.</li>
+                        <li><i class="fas fa-salt-shaker"></i> <strong>Reduza o Sal:</strong> Menos sal ajuda a reduzir o inchaço.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo-3" class="modulo-detail">
+            <div class="card-content-large">
+                <h3><i class="fas fa-toilet-paper"></i> Cuidados Práticos e Higiene</h3>
+                
+                <div class="card-content">
+                    <h4>Higiene Íntima Correta</h4>
+                    <ul>
+                        <li><strong>Como lavar:</strong> Sempre de frente para trás. Use água e sabão neutro (ou sabonete íntimo) somente na parte externa.</li>
+                        <li><strong>O quê evitar:</strong> Nunca lave o canal vaginal por dentro (ele se limpa sozinho!).</li>
+                    </ul>
+                </div>
+
+                <div class="card-content">
+                    <h4>Frequência de Troca</h4>
+                    <p><strong>Regra de Ouro:</strong> Trocar absorvente (externo) a cada **3 a 4 horas**, mesmo com pouco fluxo. Trocar a tempo evita odores e ajuda a manter a pele saudável.</p>
+                </div>
+
+                <div class="card-content card-eco">
+                    <h4>Card de Produto: EcoAbsorvente de Pano</h4>
+                    <p><strong>Vantagens:</strong> Sustentável, econômico a longo prazo e muito confortável.</p>
+                    <p><strong>Atenção:</strong> A lavagem correta é crucial para a sua saúde! Lave-o à mão após o uso, seque-o totalmente ao sol e guarde-o em um local arejado.</p>
+                </div>
+
+                <div class="card-content">
+                    <h4>Descarte Consciente</h4>
+                    <ul>
+                        <li><strong>Onde Jogar:</strong> No lixo comum. Sempre embrulhe o produto usado em papel higiênico ou na embalagem original antes de descartar.</li>
+                        <li><strong>Nunca:</strong> Nunca jogue absorvente, papel higiênico ou outros produtos no vaso sanitário.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo-4" class="modulo-detail">
+            <div class="card-content-large">
+                <h3><i class="fas fa-heart"></i> Sexualidade e Prevenção</h3>
+                
+                <div class="card-content card-alerta-sex">
+                    <h4>O Ciclo Não é Contraceptivo! (Alerta)</h4>
+                    <p><strong>❌ Mito:</strong> O ciclo menstrual regular é confiável para evitar gravidez.</p>
+                    <p><strong>✅ Verdade:</strong> O corpo adolescente é irregular! Não use o app como um calendário contraceptivo. A única forma segura de evitar gravidez é o uso consistente de métodos.</p>
+                </div>
+
+                <div class="card-content">
+                    <h4>Prevenção de ISTs/Aids</h4>
+                    <p>A camisinha (masculina ou feminina) é o único método que evita as Infecções Sexualmente Transmissíveis (ISTs) e ainda ajuda a evitar gravidez. Você pode conseguir camisinhas de **graça** na enfermaria da escola ou no posto de saúde.</p>
+                </div>
+
+                <div class="card-content">
+                    <h4>Métodos Contraceptivos</h4>
+                    <p>Se você está pensando em usar um método (pílula, injetável, implante), <strong>venha conversar!</strong> O enfermeiro pode te dar o primeiro aconselhamento e te encaminhar para o serviço de saúde. Sua escolha é importante e precisa de acompanhamento profissional.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo-5" class="modulo-detail">
+            <div class="card-content-large card-ajuda-acesso">
+                <h3><i class="fas fa-ambulance"></i> Não Está Sozinha! Onde Buscar Ajuda?</h3>
+                
+                <div class="contact-item">
+                    <h5>Seu Enfermeiro(a) Escolar</h5>
+                    <p>Para perguntas sobre seu ciclo, cólicas, métodos contraceptivos, e aconselhamento sobre ISTs. Ele/ela é o seu primeiro ponto de apoio e pode te orientar.</p>
+                </div>
+
+                <div class="contact-item">
+                    <h5>Posto de Saúde/UBS</h5>
+                    <p>Local de acesso gratuito a camisinhas, testes rápidos, pílula do dia seguinte (se necessário) e para iniciar o uso de métodos contraceptivos com acompanhamento médico.</p>
+                </div>
+
+                <div class="contact-item">
+                    <h5>Psicólogo(a)</h5>
+                    <p>Para suporte emocional, lidar com estresse, ansiedade e em casos de TDPM ou questões sobre sexualidade e relacionamentos.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="mobile-nav">
+        <a onclick="toggleContent('modulo-1')" class="nav-item"><i class="fas fa-hand-holding-water"></i> Ciclo</a>
+        <a onclick="toggleContent('modulo-2')" class="nav-item"><i class="fas fa-dumbbell"></i> Bem-Estar</a>
+        <a onclick="toggleContent('modulo-5')" class="nav-item"><i class="fas fa-ambulance"></i> Ajuda</a>
+    </nav>
+
+</body>
+</html>
